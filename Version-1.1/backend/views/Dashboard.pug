@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Dashboard
+  body
+    h1 Bienvenido, #{user.username}!
+
+    if user.role === 'owner' || 'manager'
+      if user.role === 'owner'
+        p Eres dueño y tienes acceso completo
+      else
+        p Eres encargado y tienes acceso limitado
+      
+      h2 Catálogos disponibles:
+      button(onclick="location.href='/book/catalog'") Libros
+      button(onclick="location.href='/magazine/catalog'") Revistas
+      button(onclick="location.href='/schoolSupply/catalog'") Artículos de Librería
+
+      h2 Gestión:
+      button(onclick="location.href='/order/catalog'") Órdenes
+      button(onclick="location.href='/sale/catalog'") Ventas
+      button(onclick="location.href='/supplier/catalog'") Proveedores
+
+    else
+      p Tu rol es desconocido.
+
+
+p Usuario: #{user.username} (#{user.role})
+button(onclick="location.href='/auth/logout'") Cerrar sesión

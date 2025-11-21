@@ -1,0 +1,31 @@
+doctype html 
+html
+    head
+        title Catalogo de Revistas
+        link(rel='stylesheet', href='/css/catalog.css')
+    body 
+        h1 Catalogo de Revistas 
+        table(border='1')
+            thead 
+                tr 
+                    th ID
+                    th Nombre
+                    th Fecha
+                    th Edición del Año
+                    th Número  
+                    th ISSN 
+                    th Sección
+                    th Precio 
+                    th Stock 
+            tbody 
+                each magazine in magazines 
+                    tr 
+                        td= magazine.magazineId
+                        td= magazine.name
+                        td= magazine.date.toISOString().slice(0,10)  
+                        td= magazine.issueNumber 
+                        td= magazine.number
+                        td= magazine.issn 
+                        td= magazine.section 
+                        td $#{magazine.price}
+                        td= magazine.stock

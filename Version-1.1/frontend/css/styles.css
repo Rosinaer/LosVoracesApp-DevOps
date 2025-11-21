@@ -1,0 +1,177 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container,
+.logout-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.container {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: #506377;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5b6b7b;
+}
+
+a {
+  color: #234c4c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.links {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: rgb(209, 209, 209);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin: 0.8rem 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.dashboard-container {
+  max-width: 1000px;
+  padding: 2rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  margin: 0.5rem 0;
+}
+
+.card a {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Registro
+  body
+    h1 Registro de usuario
+    form(action='/auth/register' method='POST')
+      label(for='username') Usuario:
+      input(type='text' name='username' required)
+      br
+      label(for='password') Contraseña:
+      input(type='password' name='password' required)
+      br
+      label(for='role') Rol:
+      select(name='role')
+        option(value='manager') Manager
+        option(value='owner') Owner
+      br
+      button(type='submit') Registrarse
+
+    p ¿Ya tenés una cuenta?
+      a(href='/auth/login') Iniciá sesión

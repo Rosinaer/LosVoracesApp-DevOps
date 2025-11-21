@@ -1,0 +1,74 @@
+[
+  {
+    "supplierId": "1",
+    "name": "Distribuidora Acuarela",
+    "phoneNumber": "02320422331",
+    "email": "ventas@acuareladistribuidora.com",
+    "category": "Libreria",
+    "catalog": "https://acuareladistribuidora.com"
+  },
+  {
+    "supplierId": "2",
+    "name": "Editorial Dunken",
+    "phoneNumber": "1149547700",
+    "email": "info@dunken.com.ar",
+    "category": "Libros",
+    "catalog": "https://www.dunken.org/WEBSITE/index.php"
+  },
+  {
+    "supplierId": "3",
+    "name": "Prometeo Editorial",
+    "phoneNumber": "1148626794",
+    "email": "ventas@prometeoeditorial.com",
+    "category": "Libros",
+    "catalog": "https://prometeoeditorial.com/catalogo/"
+  },
+  {
+    "supplierId": "4",
+    "name": "Distriloberto",
+    "phoneNumber": "1143020024",
+    "email": "info@distriloberto.com.ar",
+    "category": "Revistas",
+    "catalog": "https://www.distriloberto.com.ar/"
+  },
+  {
+    "supplierId": "5",
+    "name": "Distribuidora Romero",
+    "phoneNumber": "1136283279",
+    "email": "distribuidoraromero@proveedores.com",
+    "category": "Libreria",
+    "catalog": "https://romeromayoristas.com.ar/"
+  },
+  {
+    "supplierId": "6",
+    "name": "Librería La Central",
+    "phoneNumber": "1132655151",
+    "email": "lacentrallibreria@gmail.com",
+    "category": "Utiles",
+    "catalog": "https://www.librerialacentral.com.ar/"
+  },
+  {
+    "supplierId": "7",
+    "name": "Distribuidora de libros Almar",
+    "phoneNumber": "1164242779",
+    "email": "edicionesalmar2021@gmail.com",
+    "category": "Libros y revistas",
+    "catalog": "https://distribuidoradelibrosalmar.com/"
+  },
+  {
+    "supplierId": "8",
+    "name": "Pricolo SA",
+    "phoneNumber": "1143010076",
+    "email": "info@pricolosa.com",
+    "category": "Revistas",
+    "catalog": "https://www.pricolosa.com/historial.html"
+  },
+  {
+    "supplierId": "9",
+    "name": "Eternia Comics",
+    "phoneNumber": "42928103",
+    "email": "eterniacomics@yahoo.com.ar",
+    "category": "Revistas",
+    "catalog": "https://www.eterniacomics.com.ar/"
+  }
+]

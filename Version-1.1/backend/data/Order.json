@@ -1,0 +1,122 @@
+[
+  {
+    "orderId": "1716640000001",
+    "supplierId": "2",
+    "product": "Cien Años de Soledad",
+    "date": "2025-05-25",
+    "description": "Compra de 5 unidades del libro 'Cien Años de Soledad'",
+    "category": "Libros",
+    "price": 2500,
+    "quantityProduct": 5,
+    "status": "pendiente",
+    "total": 12500
+  },
+  {
+    "orderId": "1716640000002",
+    "supplierId": "4",
+    "product": "Ciencia Hoy",
+    "date": "2025-05-24",
+    "description": "Compra de 10 ejemplares de la revista 'Ciencia Hoy'",
+    "category": "Revistas",
+    "price": 1200,
+    "quantityProduct": 10,
+    "status": "completado",
+    "total": 12000
+  },
+  {
+    "orderId": "1716640000003",
+    "supplierId": "6",
+    "product": "Cartuchera",
+    "date": "2025-05-23",
+    "description": "Pedido de cartucheras escolares Totto",
+    "category": "Utiles",
+    "price": 1200,
+    "quantityProduct": 15,
+    "status": "pendiente",
+    "total": 18000
+  },
+  {
+    "orderId": "1716640000004",
+    "supplierId": "1",
+    "product": "Cuaderno Rivadavia",
+    "date": "2025-05-22",
+    "description": "Compra de cuadernos rayados para el ciclo lectivo",
+    "category": "Libreria",
+    "price": 900,
+    "quantityProduct": 30,
+    "status": "pendiente",
+    "total": 27000
+  },
+  {
+    "orderId": "1716640000005",
+    "supplierId": "5",
+    "product": "Lápiz HB",
+    "date": "2025-05-21",
+    "description": "Compra de lápices Faber-Castell para stock",
+    "category": "Libreria",
+    "price": 150,
+    "quantityProduct": 100,
+    "status": "completado",
+    "total": 15000
+  },
+  {
+    "orderId": "1716640000006",
+    "supplierId": "7",
+    "product": "1984",
+    "date": "2025-05-20",
+    "description": "Pedido de 6 copias del libro '1984'",
+    "category": "Libros y revistas",
+    "price": 2200,
+    "quantityProduct": 6,
+    "status": "pendiente",
+    "total": 13200
+  },
+  {
+    "orderId": "1716640000007",
+    "supplierId": "8",
+    "product": "Historia Viva",
+    "date": "2025-05-19",
+    "description": "Compra de revistas de historia para biblioteca",
+    "category": "Revistas",
+    "price": 1300,
+    "quantityProduct": 8,
+    "status": "completado",
+    "total": 10400
+  },
+  {
+    "orderId": "1716640000008",
+    "supplierId": "3",
+    "product": "El Principito",
+    "date": "2025-05-18",
+    "description": "Pedido de 10 ejemplares de 'El Principito'",
+    "category": "Libros",
+    "price": 1800,
+    "quantityProduct": 10,
+    "status": "pendiente",
+    "total": 18000
+  },
+  {
+    "orderId": "1716640000009",
+    "supplierId": "9",
+    "product": "National Geographic",
+    "date": "2025-05-17",
+    "description": "Compra de 12 revistas de National Geographic",
+    "category": "Revistas",
+    "price": 1500,
+    "quantityProduct": 12,
+    "status": "completado",
+    "total": 18000
+  },
+  {
+    "orderId": "1716640000010",
+    "supplierId": "6",
+    "product": "Cartuchera",
+    "date": "2025-05-16",
+    "description": "Reposición de cartucheras escolares",
+    "category": "Utiles",
+    "price": 1200,
+    "quantityProduct": 10,
+    "status": "pendiente",
+    "total": 12000
+  }
+]

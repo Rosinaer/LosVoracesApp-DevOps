@@ -1,0 +1,38 @@
+[
+  {
+    "magazineId": "1716408911001",
+    "name": "Ciencia Hoy",
+    "price": 1200,
+    "issn": "1234-5678",
+    "number": 98,
+    "section": "Ciencia",
+    "date": "2024-10-15",
+    "stock": 30,
+    "issueNumber": 4,
+    "type": "Magazine"
+  },
+  {
+    "magazineId": "1716408911002",
+    "name": "National Geographic",
+    "price": 1500,
+    "issn": "9876-5432",
+    "number": 210,
+    "section": "Naturaleza",
+    "date": "2025-01-20",
+    "stock": 20,
+    "issueNumber": 1,
+    "type": "Magazine"
+  },
+  {
+    "magazineId": "1716408911003",
+    "name": "Historia Viva",
+    "price": 1300,
+    "issn": "1122-3344",
+    "number": 56,
+    "section": "Historia",
+    "date": "2025-03-05",
+    "stock": 15,
+    "issueNumber": 2,
+    "type": "Magazine"
+  }
+]
