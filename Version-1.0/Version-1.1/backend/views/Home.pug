@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Home
+  body
+    h1 Bienvenido a la Librería El Lector Voraz
+
+    p Elegí una opción:
+    ul
+      li: a(href='/auth/login') Iniciar sesión
+      li: a(href='/auth/register') Registrarse
+
+    h2 Catálogos disponibles:
+    ul
+      li: a(href='/book/catalog') Libros
+      li: a(href='/magazine/catalog') Revistas
+      li: a(href='/schoolSupply/catalog') Artículos de Librería
+
+    h2 Gestión:
+    ul
+        li: a(href='/order') Ordenes
+        li: a(href='/sale') Ventas
+        li: a(href='/supplier') Proveedores

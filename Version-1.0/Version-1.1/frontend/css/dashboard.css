@@ -1,0 +1,145 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 2rem;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #d1d1d1;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin: 0.8rem 0;
+}
+
+button {
+  background-color: #506377;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5b6b7b;
+}
+
+a {
+  color: #234c4c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.links {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+.logout-button {
+  display: inline-block;
+  margin: 2rem auto 0;
+  background-color: #cc3333;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #a62d2d;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+
+
+/* Owner */
+body.owner {
+  background-color: #f0f4f8;
+  color: #1a1a1a;
+}
+
+body.owner .card {
+  background-color: #c9d6df;
+  box-shadow: 0 8px 25px rgba(20, 60, 90, 0.2);
+}
+
+body.owner button {
+  background-color: #2a5368;
+}
+
+body.owner button:hover {
+  background-color: #1e3a4a;
+}
+
+/* Manager */
+body.manager {
+  background-color: #f9f7f1;
+  color: #3b2f2f;
+}
+
+body.manager .card {
+  background-color: #e8d8c3;
+  box-shadow: 0 8px 25px rgba(150, 110, 60, 0.3);
+}
+
+body.manager button {
+  background-color: #a67c52;
+}
+
+body.manager button:hover {
+  background-color: #7d5c3a;
+}

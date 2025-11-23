@@ -1,0 +1,32 @@
+[
+  {
+    "supplyId": "1716408922001",
+    "name": "Lápiz HB",
+    "price": 150,
+    "section": "Útiles Básicos",
+    "stock": 100,
+    "brand": "Faber-Castell",
+    "description": "Lápiz negro clásico HB N°2",
+    "type": "Util Escolar"
+  },
+  {
+    "supplyId": "1716408922002",
+    "name": "Cuaderno Rivadavia",
+    "price": 900,
+    "section": "Papelería",
+    "stock": 50,
+    "brand": "Rivadavia",
+    "description": "Cuaderno rayado de 84 hojas",
+    "type": "Util Escolar"
+  },
+  {
+    "supplyId": "1716408922003",
+    "name": "Cartuchera",
+    "price": 1200,
+    "section": "Accesorios",
+    "stock": 25,
+    "brand": "Totto",
+    "description": "Cartuchera escolar con cierre doble",
+    "type": "Util Escolar"
+  }
+]

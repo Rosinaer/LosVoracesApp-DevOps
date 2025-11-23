@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Login
+  body
+    h1 Iniciar sesión
+    form(action='/auth/login' method='POST')
+      label(for='username') Usuario:
+      input(type='text' name='username' required)
+      br
+      label(for='password') Contraseña:
+      input(type='password' name='password' required)
+      br
+      button(type='submit') Ingresar
+
+    p ¿No tenés una cuenta?
+      a(href='/auth/register') Registrate acá

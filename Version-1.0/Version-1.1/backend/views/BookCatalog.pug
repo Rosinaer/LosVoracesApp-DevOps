@@ -1,0 +1,31 @@
+doctype html 
+html
+    head
+        title Catalogo de Libros
+        link(rel='stylesheet', href='/css/catalog.css')
+    body 
+        h1 Catalogo de Libros 
+        table(border='1')
+            thead 
+                tr 
+                    th ID
+                    th Titulo 
+                    th Autor 
+                    th Editorial 
+                    th ISBN 
+                    th Género 
+                    th Sección 
+                    th Precio 
+                    th Stock 
+            tbody 
+                each book in books 
+                    tr 
+                    td= book.bookId 
+                    td= book.title 
+                    td= book.author
+                    td= book.publisherHouse 
+                    td= book.isbn 
+                    td= book.literaryGenre 
+                    td= book.section 
+                    td $#{book.price}
+                    td= book.stock
