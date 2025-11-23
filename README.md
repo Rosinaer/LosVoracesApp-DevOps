@@ -21,7 +21,7 @@ Despliegue Frontend: Vercel
 ## Enlaces principales
 
 - Frontend (Vercel)
-  https://los-voraces-app-dev-5mqx7fols-rosinaers-projects.vercel.app/
+  https://los-voraces-app-dev-ops-uny1.vercel.app/
 
 - Backend (Render)
   https://losvoracesapp-devops.onrender.com
