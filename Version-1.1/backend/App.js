@@ -3,6 +3,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+const { requestLogger } = require("./utils/requestLogger.js");
+
 dotenv.config();
 
 const app = express();
@@ -66,6 +68,7 @@ app.use(cookieParser());
 
 app.use(express.static('public'));
 
+app.use(requestLogger);
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'API funcionando correctamente' });

@@ -1,30 +1,39 @@
 const Sale = require("../model/Sale");
+const logger = require("../utils/logger");
 
 async function renderSales(req, res) {
+  logger.info("GET /sales - Renderizando catálogo de ventas");
   try {
     const sales = await Sale.find().lean();
+    logger.info("Ventas cargadas correctamente", { count: sales.length });
     res.render("SaleCatalog", { sales });
   } catch (error) {
+    logger.error("Error al renderizar ventas", { error: error.message });
     console.error("Error al renderizar ventas:", error);
     res.status(500).send("Error al cargar el registro de ventas");
   }
 }
 
 async function getSales(req, res) {
+  logger.info("GET /api/sale - solicitando listado de ventas");
   try {
     const sales = await Sale.find();
+    logger.info("Ventas obtenidas correctamente", { count: sales.length });
     res.json(sales);
   } catch (error) {
+    logger.error("getSales error", { error: error.message });
     console.error("getSales error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
 
 async function createSale(req, res) {
+  logger.info("POST /api/sale - creando venta", { body: req.body });
   try {
     const { product, date, description, category, price, quantityProduct, total } = req.body;
 
     if ( !product || !date || !description || !category || price == null || quantityProduct == null || total == null) {
+      logger.warn("createSale - Campos faltantes", { body: req.body });
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
 
@@ -32,8 +41,10 @@ async function createSale(req, res) {
     const newSale = new Sale({ saleId, product, date, description, category, price, quantityProduct, total });
 
     await newSale.save();
+    logger.info("Venta creada exitosamente", { saleId });
     res.status(201).json(newSale);
   } catch (error) {
+    logger.error("createSale error", { error: error.message });
     console.error("createSale error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
@@ -41,13 +52,16 @@ async function createSale(req, res) {
 
 async function updateSale(req, res) {
   const { id } = req.params;
+  logger.info("PUT /api/sale/:id - actualizando venta", { id, body: req.body });
   const { product, date, description, category, price, quantityProduct, total } = req.body;
 
   try {
     const sale = await Sale.findOne({ saleId: id });
      
-    if (!sale)
+    if (!sale){
+      logger.warn("updateSale - Venta no encontrada", { id });
       return res.status(404).json({ error: "Venta no encontrada" });
+    }
     sale.product = product; 
     sale.date = date;
     sale.description = description; 
@@ -58,7 +72,9 @@ async function updateSale(req, res) {
 
     await sale.save();
     res.json(sale);
+    logger.info("Venta actualizada correctamente", { saleId: id });
   } catch (error) {
+    logger.error("updateSale error", { error: error.message });
     console.error("updateSale error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
@@ -66,20 +82,25 @@ async function updateSale(req, res) {
 
 async function deleteSale(req, res) {
   const { id } = req.params;
+  logger.info("DELETE /api/sale/:id - eliminando venta", { id });
   try {
   const sale = await Sale.findOne({ saleId: id });
   if (!sale) {
+   logger.warn("deleteSale - Venta no encontrada", { id });
    return res.status(404).json({ error: "Venta no encontrada" })
   }
    await sale.deleteOne();
+    logger.info("Venta eliminada correctamente", { saleId: id });
     res.json({ message: "Venta eliminada" });
   } catch (error) {
+    logger.error("deleteSale error", { error: error.message });
     console.error("deleteSale error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
 
 async function getTopSellingProducts(req, res) {
+  logger.info("GET /api/sale/top-products - consultando productos más vendidos", { query: req.query });
   try {
     const { range = "week" } = req.query;
 
@@ -123,8 +144,10 @@ async function getTopSellingProducts(req, res) {
       .sort((a, b) => b[1] - a[1])
       .map(([productId, quantity]) => ({ productId, quantity }));
 
+    logger.info("Top de productos generado", { totalProducts: sortedProducts.length });
     res.json(sortedProducts);
   } catch (error) {
+    logger.error("getTopSellingProducts error", { error: error.message });
     console.error('getTopSellingProducts error:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
