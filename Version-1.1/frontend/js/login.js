@@ -1,15 +1,3 @@
-async function logEvent(event, details = {}) { 
-  try {
-    await fetch(`${BACKEND_URL}/logs`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ event, details })
-    });
-  } catch (err) {
-    console.error("No se pudo enviar log:", err);
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   logEvent("login_screen_opened");
 });
@@ -44,7 +32,8 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     }
   } catch (error) {
     logEvent("login_error_exception", { error: error.message });
-    console.error('Error en login:', error);
+    debugError(err, 'login.js - submit');
+    //console.error('Error en login:', error);
     alert('Error en el servidor');
   }
 });

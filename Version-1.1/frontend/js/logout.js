@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         logEvent("logout_failed", { status: res.status });
-        console.error('Error cerrando sesión:', err);
+        debugError(err, 'logout.js - logoutBtn click');
+        //console.error('Error cerrando sesión:', err);
         alert('No se pudo cerrar la sesión');
       }
     });

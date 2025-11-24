@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (error) {
       logEvent("register_error_exception", { error: error.message });
-      console.error('Error en registro:', error);
+      debugError(err, 'register.js - submit');
+      //console.error('Error en registro:', error);
       alert('Error en el servidor');
     }
   });

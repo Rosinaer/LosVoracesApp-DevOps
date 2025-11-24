@@ -41,7 +41,8 @@ async function getUserData() {
 
   } catch (err) {
     logEvent("dashboard_error_exception", { error: err.message });
-    console.error('Error al obtener el usuario:', err);
+    debugError(err, 'dashboard.js - getUserData');
+    //console.error('Error al obtener el usuario:', err);
     window.location.href = 'login.html';
   }
 }
