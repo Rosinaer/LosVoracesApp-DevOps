@@ -1,3 +1,5 @@
+logEvent("dashboard_screen_opened");
+
 async function getUserData() {
   try {
     const res = await fetch(`${BACKEND_URL}/auth/me`, {
@@ -5,12 +7,17 @@ async function getUserData() {
     });
 
     if (!res.ok) {
+      logEvent("dashboard_auth_failed", { status: res.status });
       window.location.href = 'login.html';
       return;
     }
 
     const user = await res.json();
 
+    logEvent("dashboard_user_loaded", {
+      username: user.username,
+      role: user.role
+    });
 
     document.getElementById('username').textContent = user.username;
     document.getElementById('role-info').textContent = `Rol: ${user.role}`;
@@ -33,6 +40,7 @@ async function getUserData() {
     document.getElementById('proveedoresLink').href = `${BACKEND_URL}/supplier/catalog`;
 
   } catch (err) {
+    logEvent("dashboard_error_exception", { error: err.message });
     console.error('Error al obtener el usuario:', err);
     window.location.href = 'login.html';
   }
