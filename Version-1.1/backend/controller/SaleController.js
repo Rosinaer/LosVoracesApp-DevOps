@@ -9,7 +9,7 @@ async function renderSales(req, res) {
     res.render("SaleCatalog", { sales });
   } catch (error) {
     logger.error("Error al renderizar ventas", { error: error.message });
-    console.error("Error al renderizar ventas:", error);
+    //console.error("Error al renderizar ventas:", error);
     res.status(500).send("Error al cargar el registro de ventas");
   }
 }
@@ -22,7 +22,7 @@ async function getSales(req, res) {
     res.json(sales);
   } catch (error) {
     logger.error("getSales error", { error: error.message });
-    console.error("getSales error:", error);
+    //console.error("getSales error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -45,7 +45,7 @@ async function createSale(req, res) {
     res.status(201).json(newSale);
   } catch (error) {
     logger.error("createSale error", { error: error.message });
-    console.error("createSale error:", error);
+    //console.error("createSale error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -75,7 +75,7 @@ async function updateSale(req, res) {
     logger.info("Venta actualizada correctamente", { saleId: id });
   } catch (error) {
     logger.error("updateSale error", { error: error.message });
-    console.error("updateSale error:", error);
+    //console.error("updateSale error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 };
@@ -94,7 +94,7 @@ async function deleteSale(req, res) {
     res.json({ message: "Venta eliminada" });
   } catch (error) {
     logger.error("deleteSale error", { error: error.message });
-    console.error("deleteSale error:", error);
+    //console.error("deleteSale error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -148,7 +148,7 @@ async function getTopSellingProducts(req, res) {
     res.json(sortedProducts);
   } catch (error) {
     logger.error("getTopSellingProducts error", { error: error.message });
-    console.error('getTopSellingProducts error:', error);
+    //console.error('getTopSellingProducts error:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 }

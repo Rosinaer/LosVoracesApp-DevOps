@@ -10,7 +10,7 @@ async function getSchoolSupplies(req, res) {
     res.json(schoolSupplies);
   } catch (error) {
     logger.error(`GET /schoolSupply - Error: ${error.message}`);
-    console.error("getSchoolSupplies error:", error);
+    //console.error("getSchoolSupplies error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -41,7 +41,7 @@ async function createSchoolSupply(req, res) {
     res.status(201).json(newSchoolSupply);
   } catch (error) {
     logger.error(`POST /schoolSupply - Error: ${error.message}`);
-    console.error("createSchoolSupply error:", error);
+    //console.error("createSchoolSupply error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -71,7 +71,7 @@ async function updateSchoolSupply(req, res) {
     res.json(schoolSupply);
   } catch (error) {
     logger.error(`PUT /schoolSupply/${id} - Error: ${error.message}`);
-    console.error("updateSchoolsupply error:", error);
+    //console.error("updateSchoolsupply error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -94,7 +94,7 @@ async function deleteSchoolSupply(req, res) {
     res.json({ message: "Útil escolar eliminado" });
   } catch (error) {
     logger.error(`DELETE /schoolSupply/${id} - Error: ${error.message}`);
-    console.error("deleteSchoolSupply error:", error);
+    //console.error("deleteSchoolSupply error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -107,7 +107,7 @@ async function renderCatalog(req, res) {
     res.render("SchoolSupplyCatalog", { schoolSupplies });
   } catch (err) {
     logger.error(`GET /schoolSupply/catalog - Error: ${error.message}`);
-    console.error("Error al renderizar el catalogo de útiles escolares", err);
+    //console.error("Error al renderizar el catalogo de útiles escolares", err);
     res.status(500).send("Error al cargar el catálogo de útiles escolares");
   }
 }
@@ -137,7 +137,7 @@ async function updateSchoolSupplyStock(req, res) {
     res.json({ message: 'Stock actualizado', schoolSupply });
   } catch (error) {
     logger.error(`PATCH /schoolSupply/${id}/stock - Error: ${error.message}`);
-    console.error("updateSchoolSupplyStock error:", error);
+    //console.error("updateSchoolSupplyStock error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }

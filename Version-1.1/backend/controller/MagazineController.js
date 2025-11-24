@@ -10,7 +10,7 @@ async function getMagazines(req, res) {
         res.json(magazines);
     } catch (error) {
       logger.error(`GET /magazine - Error: ${error.message}`);
-        console.error('getMagazine error:', error);
+        //console.error('getMagazine error:', error);
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 }
@@ -35,7 +35,7 @@ async function createMagazine(req, res) {
         res.status(201).json(newMagazine);
     } catch (error) {
       logger.error(`POST /magazine - Error: ${error.message}`);
-      console.error('createMagazine error:', error);
+      //console.error('createMagazine error:', error);
       res.status(500).json({ error: 'Error interno del servidor' });
 
     }
@@ -68,7 +68,7 @@ async function updateMagazine(req, res) {
     res.json(magazine);
   } catch (error) {
     logger.error(`PUT /magazine/${id} - Error: ${error.message}`);
-    console.error("updateMagazine error:", error);
+    //console.error("updateMagazine error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 };
@@ -91,7 +91,7 @@ async function deleteMagazine(req, res) {
     res.json({ message: "Revista eliminada" });
   } catch (error) {
     logger.error(`DELETE /magazine/${id} - Error: ${error.message}`);
-    console.error("deleteMagazine error:", error);
+    //console.error("deleteMagazine error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -104,7 +104,7 @@ async function renderCatalog(req, res) {
         res.render('MagazineCatalog', { magazines });
     } catch (error) {
         logger.error(`GET /magazine/catalog - Error: ${error.message}`);
-        console.error('Error al renderizar el catalogo de revistas', error);
+        //console.error('Error al renderizar el catalogo de revistas', error);
         res.status(500).send('Error al cargar el catálogo de revistas');
     }
 }
@@ -135,7 +135,7 @@ async function updateMagazineStock(req, res) {
     res.json({ message: 'Stock actualizado', magazine });
   } catch (error) {
     logger.error(`PATCH /magazine/${id}/stock - Error: ${error.message}`);
-    console.error("updateMagazineStock error:", error);
+    //console.error("updateMagazineStock error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }

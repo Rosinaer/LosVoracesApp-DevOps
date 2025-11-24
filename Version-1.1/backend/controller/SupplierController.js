@@ -9,7 +9,7 @@ async function renderSupplierCatalog(req, res) {
     res.render('SupplierCatalog', { suppliers });
   } catch (error) {
     logger.error(`GET /supplier/catalog - Error: ${error.message}`);
-    console.error('Error al renderizar catálogo de proveedores:', error);
+    //console.error('Error al renderizar catálogo de proveedores:', error);
     res.status(500).send('Error al cargar el catálogo de proveedores');
   }
 }
@@ -22,7 +22,7 @@ async function getSuppliers(req, res) {
     res.json(suppliers);
   } catch (error) {
     logger.error(`GET /supplier - Error: ${error.message}`);
-    console.error('getSuppliers error:', error);
+    //console.error('getSuppliers error:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 
@@ -46,7 +46,7 @@ async function createSupplier(req, res) {
     res.status(201).json(newSupplier);
   } catch (error) {
     logger.error(`POST /supplier - Error: ${error.message}`);
-    console.error('createSupplier error:', error);
+    //console.error('createSupplier error:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 }
@@ -75,7 +75,7 @@ try {
   res.json(supplier);
 } catch (error) {
     logger.error(`PUT /supplier/${id} - Error: ${error.message}`);
-    console.error("updateSupplier error:", error);
+    //console.error("updateSupplier error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }  
 }
@@ -95,7 +95,7 @@ async function deleteSupplier(req, res) {
   res.json({ message: 'Proveedor eliminado' });
 } catch (error) {
     logger.error(`DELETE /supplier/${id} - Error: ${error.message}`);
-    console.error("deleteSupplier error:", error);
+    //console.error("deleteSupplier error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -110,7 +110,7 @@ async function getSuppliersByCategory(req, res) {
     res.json(filtered);
   } catch (error) {
     logger.error(`GET /supplier/category/${category} - Error: ${error.message}`);
-    console.error('getSuppliersByCategory error:', error);
+    //console.error('getSuppliersByCategory error:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 }
@@ -131,7 +131,7 @@ async function getSupplierById(req, res) {
     res.json(supplier);
   } catch (error) {
     logger.error(`GET /supplier/${id} - Error: ${error.message}`);
-    console.error('getSupplierById error:', error);
+    //console.error('getSupplierById error:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 }

@@ -10,7 +10,7 @@ async function getBooks(req, res) {
     res.json(books);
   } catch (error) {
     logger.error(`GET /book - Error: ${error.message}`);
-    console.error("getBooks error:", error);
+    //console.error("getBooks error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -33,7 +33,7 @@ async function createBook(req, res) {
     res.status(201).json(newBook);
   } catch (error) {
     logger.error(`POST /book - Error: ${error.message}`);
-    console.error("createBook error:", error);
+    //console.error("createBook error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -67,7 +67,7 @@ async function updateBook(req, res) {
     
   } catch (error) {
     logger.error(`PUT /book/${id} - Error: ${error.message}`);
-    console.error("updateBook error:", error);
+    //console.error("updateBook error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -91,7 +91,7 @@ async function deleteBook(req, res) {
     res.json({ message: "Libro eliminado" });
   } catch (error) {
     logger.error(`DELETE /book/${id} - Error: ${error.message}`);
-    console.error("deleteBook error:", error);
+    //console.error("deleteBook error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -103,7 +103,7 @@ async function renderCatalog(req, res) {
     res.render("BookCatalog", { books });
   } catch (error) {
     logger.error(`GET /book/catalog - Error: ${error.message}`);
-    console.error("Error al renderizar el catálogo de libros", error);
+    //console.error("Error al renderizar el catálogo de libros", error);
     res.status(500).send("Error al cargar el catálogo de libros");
   }
 }
@@ -135,7 +135,7 @@ async function updateBookStock(req, res) {
     res.json({ message: 'Stock actualizado', book });
   } catch (error) {
     logger.error(`PATCH /book/${id}/stock - Error: ${error.message}`);
-    console.error("updateBookStock error:", error);
+    //console.error("updateBookStock error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }

@@ -9,7 +9,7 @@ async function renderOrders(req, res) {
     res.render('OrderCatalog', { orders });            
   } catch (err) {
     logger.error(`GET /order/render - Error: ${err.message}`);
-    console.error('Error al renderizar órdenes', err);
+    //console.error('Error al renderizar órdenes', err);
     res.status(500).send('Error al cargar las órdenes');
   }
 }
@@ -22,7 +22,7 @@ async function getOrders(req, res) {
     res.json(orders);
   } catch (error) {
     logger.error(`GET /order - Error: ${error.message}`);
-    console.error("getOrders error:", error);
+    //console.error("getOrders error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -44,7 +44,8 @@ async function createOrder(req, res) {
     logger.info(`POST /order - Orden creada con ID=${orderId}`);
     res.status(201).json(newOrder);
   } catch (error) {
-    console.error("createOrder error:", error);
+    logger.error(`POST /order - Error: ${error.message}`);
+    //console.error("createOrder error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -76,7 +77,7 @@ async function updateOrder(req, res) {
     res.json(order);
   } catch (error) {
     logger.error(`PUT /order/${id} - Error: ${error.message}`);
-    console.error("updateOrder error:", error);
+    //console.error("updateOrder error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
@@ -97,7 +98,7 @@ async function deleteOrder(req, res) {
     res.json({ message: "Orden eliminada" });
   } catch (error) {
     logger.error(`DELETE /order/${id} - Error: ${error.message}`);
-    console.error("deleteOrder error:", error);
+    //console.error("deleteOrder error:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 }
