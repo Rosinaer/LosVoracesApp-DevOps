@@ -1,7 +1,7 @@
 const User = require('../model/User');
 const jwt = require('jsonwebtoken');
 
-const { logEvent } = require("./middleware/requestLogger.js");
+const { logEvent } = require("../utils/requestLogger.js");
 
 //Registro
 async function register(req, res) {
