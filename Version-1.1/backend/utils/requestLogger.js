@@ -1,4 +1,4 @@
-const winston = require("winston");
+const winston = require('winston');
 const { Logtail } = require("@logtail/node");
 const { LogtailTransport } = require("@logtail/winston");
 
@@ -44,7 +44,7 @@ const logger = winston.createLogger({
   transports,
 });
 
-export function requestLogger(req, res, next) {
+function requestLogger(req, res, next) {
   const start = Date.now();
 
   res.on("finish", () => {
@@ -68,8 +68,7 @@ export function requestLogger(req, res, next) {
   next();
 }
 
-
-export async function logEvent(event, details = {}) {
+async function logEvent(event, details = {}) {
   logger.info({
     event,
     ...details,
@@ -81,4 +80,8 @@ export async function logEvent(event, details = {}) {
   }
 }
 
-export default logger;
+module.exports = {
+  logger,
+  requestLogger,
+  logEvent,
+};
