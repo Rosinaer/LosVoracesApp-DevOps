@@ -105,7 +105,7 @@ async function renderCatalog(req, res) {
     const schoolSupplies = await SchoolSupply.find();
     logger.info(`GET /schoolSupply/catalog - Útiles cargados: ${schoolSupplies.length}`);
     res.render("SchoolSupplyCatalog", { schoolSupplies });
-  } catch (err) {
+  } catch (error) {
     logger.error(`GET /schoolSupply/catalog - Error: ${error.message}`);
     //console.error("Error al renderizar el catalogo de útiles escolares", err);
     res.status(500).send("Error al cargar el catálogo de útiles escolares");
