@@ -5,6 +5,7 @@
   "main": "App.js",
   "scripts": {
     "start": "node App.js",
+    "development": "nodemon App.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
