@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.getElementById('password');
   const roleSelect = document.getElementById('role');
 
+  const BACKEND_URL = window.BACKEND_URL;
+
   if (!form || !usernameInput || !passwordInput || !roleSelect) {
     console.error('Uno o más elementos del formulario no se encontraron en el DOM.');
     return;
@@ -43,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         alert(data.error || 'Error al registrarse');
       }
-    } catch (error) {
-      logEvent("register_error_exception", { error: error.message });
+    } catch (err) {
+      logEvent("register_error_exception", { error: err.message });
       debugError(err, 'register.js - submit');
-      //console.error('Error en registro:', error);
+      //console.error('Error en registro:', err);
       alert('Error en el servidor');
     }
   });

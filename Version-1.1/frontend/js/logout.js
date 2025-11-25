@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const logoutBtn = document.getElementById('logoutBtn');
 
+  const BACKEND_URL = window.BACKEND_URL;
+
   if (logoutBtn) {
     logoutBtn.addEventListener('click', async () => {
 

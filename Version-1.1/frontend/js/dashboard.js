@@ -1,5 +1,7 @@
 logEvent("dashboard_screen_opened");
 
+const BACKEND_URL = window.BACKEND_URL;
+
 async function getUserData() {
   try {
     const res = await fetch(`${BACKEND_URL}/auth/me`, {

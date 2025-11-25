@@ -8,6 +8,8 @@ document.getElementById('loginForm').addEventListener('submit', async function (
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
+  const BACKEND_URL = window.BACKEND_URL;
+
   logEvent("login_attempt", { username });
 
   try {
@@ -30,10 +32,10 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       logEvent("login_failed", { username, status: res.status });
       alert(data.error || 'Error al iniciar sesión');
     }
-  } catch (error) {
-    logEvent("login_error_exception", { error: error.message });
+  } catch (err) {
+    logEvent("login_error_exception", { error: err.message });
     debugError(err, 'login.js - submit');
-    //console.error('Error en login:', error);
+    //console.error('Error en login:', err);
     alert('Error en el servidor');
   }
 });
