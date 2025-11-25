@@ -1,3 +1,7 @@
+const isLocal =
+  window.location.hostname.includes("localhost") ||
+  window.location.hostname === "127.0.0.1";
+
 const BACKEND_URL = window.location.hostname.includes("localhost")
   ? "http://localhost:3000" 
   : "https://losvoracesapp-devops.onrender.com";
