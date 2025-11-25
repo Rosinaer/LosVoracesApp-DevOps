@@ -5,6 +5,8 @@ const Magazine = require('../../../model/Magazine');
 // Se mockean las dependencias externas para aislar el controlador
 jest.mock('../../../model/Magazine');
 
+jest.mock('../../../utils/logger', () => require('../../_mocks_/logger'));
+
 // Grupo principal de tests para MagazineController
 describe('MagazineController', () => {
   let req, res;

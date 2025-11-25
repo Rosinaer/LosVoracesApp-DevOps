@@ -5,6 +5,8 @@ const Order = require('../../../model/Order');
 // Se mockean las dependencias externas para aislar el controlador
 jest.mock('../../../model/Order');
 
+jest.mock('../../../utils/logger', () => require('../../_mocks_/logger'));
+
 // Grupo principal de tests para OrderController
 describe('OrderController', () => {
   let req, res;

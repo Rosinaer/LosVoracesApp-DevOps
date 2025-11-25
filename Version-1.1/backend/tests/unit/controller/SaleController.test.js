@@ -5,6 +5,8 @@ const Sale = require('../../../model/Sale');
 // Se mockean las dependencias externas para aislar el controlador
 jest.mock('../../../model/Sale');
 
+jest.mock('../../../utils/logger', () => require('../../_mocks_/logger'));
+
 // Grupo principal de tests para SaleController
 describe('SaleController', () => {
   let req, res;
