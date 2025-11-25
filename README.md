@@ -21,11 +21,10 @@ Despliegue Frontend: Vercel
 ## Enlaces principales
 
 - Frontend (Vercel)
-   https://los-voraces-app-dev-ops-uny1.vercel.app/
+  https://los-voraces-app-dev-ops-uny1.vercel.app/
 
 - Backend (Render)
-   https://losvoracesapp-devops.onrender.com
-
+  https://losvoracesapp-devops.onrender.com
 - Docker Hub (imagen publicada)
   https://hub.docker.com/repository/docker/rosinaer/los-voraces/general
 
