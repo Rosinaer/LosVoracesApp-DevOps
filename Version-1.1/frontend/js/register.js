@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+   logEvent("register_screen_opened");
+
   const form = document.getElementById('registerForm');
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
   const roleSelect = document.getElementById('role');
+
+  const BACKEND_URL = window.BACKEND_URL;
 
   if (!form || !usernameInput || !passwordInput || !roleSelect) {
     console.error('Uno o más elementos del formulario no se encontraron en el DOM.');
@@ -16,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = passwordInput.value;
     const role = roleSelect.value;
 
+    logEvent("register_attempt", { username, role });
+
     try {
       const res = await fetch(`${BACKEND_URL}/auth/register`, {
         method: 'POST',
@@ -27,13 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await res.json();
 
       if (res.ok) {
+        logEvent("register_success", { username, role });
         alert('Registro exitoso. Iniciá sesión.');
         window.location.href = 'login.html';
       } else {
+        logEvent("register_failed", {
+          username,
+          status: res.status,
+          backendMessage: data.error
+        });
         alert(data.error || 'Error al registrarse');
       }
-    } catch (error) {
-      console.error('Error en registro:', error);
+    } catch (err) {
+      logEvent("register_error_exception", { error: err.message });
+      debugError(err, 'register.js - submit');
+      //console.error('Error en registro:', err);
       alert('Error en el servidor');
     }
   });

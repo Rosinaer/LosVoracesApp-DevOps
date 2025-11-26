@@ -3,6 +3,8 @@ const SchoolSupply = require('../../../model/SchoolSupply');
 
 jest.mock('../../../model/SchoolSupply');
 
+jest.mock('../../../utils/logger', () => require('../../_mocks_/logger'));
+
 describe('SchoolSupplyController', () => {
   let req, res;
 

@@ -1,17 +1,24 @@
 const User = require('../model/User');
 const jwt = require('jsonwebtoken');
 
+const { logEvent } = require("../utils/requestLogger.js");
+
 //Registro
 async function register(req, res) {
   try {
     const { username, password, role } = req.body;
 
+    await logEvent("auth_register_attempt", { username });
+
     if (!username || !password) {
+      await logEvent("auth_register_missing_fields", { username });
       return res.status(400).json({ error: 'Usuario y contraseña son obligatorios' });
     }
 
     const user = new User({ username, password, role });
     await user.save();
+
+   await logEvent("auth_register_success", { userId: user._id, username });
 
 
     const token = jwt.sign(
@@ -41,6 +48,7 @@ async function register(req, res) {
     console.error('Error en register:', error);
     
     if (error.code === 11000) {
+      await logEvent("auth_register_duplicate_username", { username: req.body.username });
       return res.status(400).json({ error: 'Ese nombre de usuario ya está registrado' });
     }
     
@@ -53,11 +61,22 @@ async function login(req, res) {
   try {
     const { username, password } = req.body;
 
+    await logEvent("auth_login_attempt", { username });
+
     const user = await User.findOne({ username });
-    if (!user) return res.status(401).json({ error: 'Credenciales inválidas' });
+    if (!user) {
+      
+      await logEvent("auth_login_failed_user_not_found", { username });
+      return res.status(401).json({ error: 'Credenciales inválidas' });
+    }
 
     const isMatch = await user.comparePassword(password);
-    if (!isMatch) return res.status(401).json({ error: 'Credenciales inválidas' });
+    if (!isMatch) {
+      await logEvent("auth_login_failed_invalid_password", { username });
+      return res.status(401).json({ error: 'Credenciales inválidas' });
+    }
+
+    await logEvent("auth_login_success", { userId: user._id, username });
 
     const token = jwt.sign(
       {
@@ -82,6 +101,12 @@ async function login(req, res) {
 
     res.json({ token, user: { username: user.username, role: user.role } });
   } catch (error) {
+
+     await logEvent("auth_login_exception", {
+      username: req.body.username,
+      error: error.message
+    });
+    
     console.error('Error en login:', error);
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }

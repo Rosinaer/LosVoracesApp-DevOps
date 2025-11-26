@@ -1,7 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const { requestLogger } = require('./utils/requestLogger');
+const logsRoute = require('./routes/LogsRoute');
 
 dotenv.config();
 
@@ -67,8 +69,14 @@ app.use(cookieParser());
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "API funcionando correctamente" });
+app.use(express.static('public'));
+
+app.use(requestLogger);
+
+app.use('/logs', logsRoute);
+
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'API funcionando correctamente' });
 });
 
 // Rutas principales

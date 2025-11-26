@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Catálogo de Proveedores
+    link(rel="stylesheet", href="/css/catalog.css")
+  body
+    h1 Catálogo de Proveedores
+
+    table(border="1")
+      thead
+        tr
+          th ID
+          th Nombre
+          th Teléfono
+          th Email
+          th Rubro
+          th Catálogo Online
+      tbody
+        each supplier in suppliers
+          tr
+            td= supplier.supplierId
+            td= supplier.name
+            td= supplier.phoneNumber
+            td= supplier.email
+            td= supplier.category
+            td 
+              a(href=supplier.catalog, target="_blank") Ver catálogo

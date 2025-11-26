@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenido, <span id="username">Usuario</span>!</h1>
+    <p id="role-info">Rol: </p>
+
+    <div class="dashboard-container">
+      <div class="card" id="catalog-section">
+        <h2>Catálogos</h2>
+        <ul>
+          <li><a id="librosLink" target="_blank">📚 Libros</a></li>
+          <li><a id="revistasLink" target="_blank">📰 Revistas</a></li>
+          <li><a id="utilesLink" target="_blank">✏️ Art. Librería</a></li>
+        </ul>
+      </div>
+
+      <div class="card" id="management-section">
+        <h2>Gestión</h2>
+        <ul>
+          <li><a id="ordenesLink" target="_blank">📦 Órdenes</a></li>
+          <li><a id="ventasLink" target="_blank">💸 Ventas</a></li>
+          <li><a id="proveedoresLink" target="_blank">🚚 Proveedores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <button id="logoutBtn" class="logout-button">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/logout.js"></script>
+</body>
+</html>

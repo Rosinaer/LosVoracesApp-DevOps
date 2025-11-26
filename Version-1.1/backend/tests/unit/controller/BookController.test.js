@@ -5,6 +5,8 @@ const Book = require('../../../model/Book');
 // Se mockean las dependencias externas para aislar el controlador
 jest.mock('../../../model/Book');
 
+jest.mock('../../../utils/logger', () => require('../../_mocks_/logger'));
+
 // Grupo principal de tests para BookController
 describe('BookController', () => {
   let req, res;

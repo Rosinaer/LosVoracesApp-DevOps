@@ -3,6 +3,8 @@ const Supplier = require('../../../model/Supplier');
 
 jest.mock('../../../model/Supplier');
 
+jest.mock('../../../utils/logger', () => require('../../_mocks_/logger'));;
+
 describe('SupplierController', () => {
   // Se definen variables simuladas para las peticiones y respuestas HTTP
   let req, res;

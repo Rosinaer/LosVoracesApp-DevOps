@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Registro de Ventas
+    link(rel="stylesheet", href="/css/catalog.css")
+  body
+    h1 Registro de Ventas
+
+    table(border="1")
+      thead
+        tr
+          th ID
+          th Producto
+          th Descripción
+          th Fecha
+          th Categoría
+          th Precio&nbsp;Unitario
+          th Cantidad
+          th Total
+      tbody
+        each sale in sales
+          tr
+            td= sale.saleId
+            td= typeof sale.product === 'string' ? sale.product : sale.product.name
+            td= sale.description
+            td= sale.date.toISOString().slice(0,10)
+            td= sale.category
+            td $#{sale.price}
+            td= sale.quantityProduct
+            td $#{sale.total}

@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Órdenes de Compra
+    link(rel="stylesheet", href="/css/catalog.css")
+  body
+    h1 Órdenes de Compra
+
+    table(border="1")
+      thead
+        tr
+          th ID
+          th Producto
+          th Descripción
+          th Fecha
+          th Categoría
+          th Precio&nbsp;Unitario
+          th Cantidad
+          th Total
+          th Proveedor
+          th Estado
+      tbody
+        each order in orders
+          tr
+            td= order.orderId
+            td
+                        if order.product.name
+                            span= order.product.name 
+                        else if order.product.title
+                            span= order.product.title
+                        else 
+                            span (sin nombre/titulo)
+            td= order.description
+            td= order.date.toISOString().slice(0,10)   
+            td= order.category
+            td $#{order.price}
+            td= order.quantityProduct
+            td $#{order.total}
+            td= order.supplierId
+            td= order.status
